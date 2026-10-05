@@ -46,18 +46,18 @@
 							<h1>Travel</h1>
 							<ul id="sites">
 								{{#each trips}}
-<li>
-  <a href="/travel">
-    <img src="/images/{{this.image}}" alt="{{this.name}}">
-  </a>
+								<li>
+									<a href="/api/trips/{{this.code}}">
+										<img src="/images/{{this.image}}" alt="{{this.name}}">
+									</a>
 
-  <h2>
-    <a href="/travel">{{this.name}}</a>
-  </h2>
+									<h2>
+										<a href="/travel">{{this.name}}</a>
+									</h2>
 
-  <p>{{this.description}}</p>
-</li>
-{{/each}}
+									<p>{{this.description}}</p>
+								</li>
+								{{/each}}
 							</ul>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 						<a href="rooms.html">Rooms</a>
 					</li>
 					<li>
-						<a href=“meals.html">Meals</a>
+						<a href="meals.html">Meals</a>
 					</li>
 					<li>
 						<a href="news.html">News</a>
@@ -90,7 +90,10 @@
 					</li>
 				</ul>
 				<div id="connect">
-					<a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+					<a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a>
+					<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a>
+					<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a>
+					<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
 				</div>
 			</div>
 			<p>
