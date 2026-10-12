@@ -1,0 +1,38 @@
+
+<div class="container mt-4">
+  <h2>Edit Trip</h2>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+      <label class="form-label">Trip Code</label>
+      <input class="form-control" formControlName="code" readonly>
+    </div>
+
+    <div class="mb-3" *ngFor="let field of [
+      'name', 'length', 'start', 'resort',
+      'perPerson', 'image', 'description'
+    ]">
+      <label class="form-label">{{ field | titlecase }}</label>
+
+      <input
+        class="form-control"
+        [type]="field === 'start' ? 'date' : 'text'"
+        [formControlName]="field"
+        required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Save Changes
+    </button>
+
+    <button type="button" class="btn btn-secondary ms-2"
+            (click)="router.navigate(['/'])">
+      Cancel
+    </button>
+  </form>
+</div>
