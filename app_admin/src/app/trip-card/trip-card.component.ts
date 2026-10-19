@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Trip } from '../models/trip';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-trip-card',
@@ -13,4 +14,6 @@ import { Trip } from '../models/trip';
 })
 export class TripCardComponent {
   @Input({ required: true }) trip!: Trip;
+  constructor(private authenticationService: AuthenticationService) {}
+  isLoggedIn(): boolean { return this.authenticationService.isLoggedIn(); }
 }

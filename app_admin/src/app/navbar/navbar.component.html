@@ -1,0 +1,5 @@
+<nav class="navbar navbar-light bg-light px-4 mb-4">
+  <a class="navbar-brand" routerLink="/">Travlr Getaways Admin</a>
+  <a *ngIf="!isLoggedIn()" routerLink="/login" class="btn btn-outline-primary">Log In</a>
+  <button *ngIf="isLoggedIn()" (click)="onLogout()" class="btn btn-outline-secondary">Log Out</button>
+</nav>

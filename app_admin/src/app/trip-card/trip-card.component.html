@@ -18,7 +18,7 @@
 
     <p class="card-text">{{ trip.description }}</p>
 
-    <a [routerLink]="['/edit-trip', trip.code]"
+    <a *ngIf="isLoggedIn()" [routerLink]="['/edit-trip', trip.code]"
        class="btn btn-primary">
       Edit Trip
     </a>

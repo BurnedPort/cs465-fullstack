@@ -3,14 +3,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Trip } from '../models/trip';
+import { User } from '../models/user';
+import { AuthResponse } from '../models/auth-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripDataService {
-  private apiUrl = 'http://localhost:3000/api/trips';
+  private baseUrl = 'http://localhost:3000/api';
+  private apiUrl = this.baseUrl + '/trips';
 
   constructor(private http: HttpClient) {}
+
+  login(user: User, password: string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(this.baseUrl + '/login', { email: user.email, password });
+  }
+
+  register(user: User, password: string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(this.baseUrl + '/register', { name: user.name, email: user.email, password });
+  }
 
   // GET all trips
   public getTrips(): Observable<Trip[]> {
